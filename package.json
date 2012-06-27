@@ -1,0 +1,20 @@
+{
+  "author": "Colin O'Brien <cobrien@rallydev.com>",
+  "name": "TAM-HW-2",
+  "description": "Homework for JS4TAMs Week 2",
+  "version": "0.0.0",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/Echo3ToEcho7/TAM-HW2.git"
+  },
+  "dependencies": {
+	"express": "*",
+	"mocha": "*",
+	"expect.js": "*"
+  },
+  "devDependencies": {},
+  "optionalDependencies": {},
+  "engines": {
+    "node": "*"
+  }
+}
