@@ -46,3 +46,4 @@ app.get("/", function(req, res) {
 });
 
 app.listen(port, ipaddr);
+console.log("Now listening at address http://" + ipaddr + ":" + port + "/");

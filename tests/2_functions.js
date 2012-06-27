@@ -64,6 +64,24 @@ describe("About Functions", function() {
                 expect(e).to.be.a(ReferenceError);
             });
         });
+    });
+
+    it("should allow function calls to include more arguments than defined", function() {
+        var oneArgFn = function onArgFn(arg1) {
+            return arg1;
+        };
+
+        expect(oneArgFn("Hello", "World")).to.not.throwException();
+        expect(oneArgFn("Hello", "World")).to.equal("Hello");
+    });
+
+    it("should have access to the 'arguments' variable to access undefined arguments", function() {
+        var oneArgFn = function onArgFn(arg1) {
+            return arguments[arguments.length - 1];
+        };
+
+        expect(oneArgFn("Hello", "World")).to.not.throwException();
+        expect(oneArgFn("Hello", "World")).to.equal("World");
 
     });
 });
