@@ -1,7 +1,4 @@
-var testFiles = [];
-
-testFiles.push("1_equality.js");
-testFiles.push("2_functions.js");
+var testFiles = ["1_equality.js", "2_functions.js", "3_arrays.js"];
 
 var express = require("express");
 var app = express.createServer();
@@ -18,18 +15,19 @@ app.configure(function() {
 
 app.get("/", function(req, res) {
     var i, ii;
-    var html = 
+    var html =
     "<html>" +
     "   <head>" +
+    "       <title>Week 2 Homework</title>" +
     "       <link href='mocha.css' rel='stylesheet'></link>" +
     "       <script src='expect.js'></script>" +
     "       <script src='mocha.js'></script>" +
     "       <script>mocha.setup('bdd')</script>";
-    
+
     for (i = 0, ii = testFiles.length; i < ii; i++) {
         html = html + "<script src='" + testFiles[i] + "'></script>";
     }
-    
+
     html = html +
     "   </head>" +
     "   <body>" +
@@ -37,7 +35,7 @@ app.get("/", function(req, res) {
     "       <script type='text/javascript'>mocha.run()</script>" +
     "   </body>" +
     "</html>";
-    
+
     res.end(html);
 });
 
