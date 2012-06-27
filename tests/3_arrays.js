@@ -4,7 +4,7 @@ describe("About Arrays", function() {
 
     it("should create arrays", function() {
         var emptyArray = [];
-        expect(emptyArray).to.be.an(Array); //A mistake? - http:javascript.crockford.com/remedial.html
+        expect(emptyArray).to.be.an(Array);
         expect(emptyArray).to.have.length(0);
 
         var multiTypeArray = [0, 1, "two", function() {return 3;}, [4, 5]];
@@ -44,6 +44,7 @@ describe("About Arrays", function() {
         expect(tenEmptyElementArray).to.have.length(5);
     });
 
+    // https://developer.mozilla.org/en/JavaScript/Reference/Global_Objects/Array/slice
     it("should slice arrays", function() {
         var array = ["peanut", "butter", "and", "jelly"];
 
@@ -74,6 +75,7 @@ describe("About Arrays", function() {
         expect(array[3]).to.equal("three");
     });
 
+    // https://developer.mozilla.org/en/JavaScript/Reference/Global_Objects/Array/push
     it("should push and pop", function() {
         var array = [1, 2];
         array.push(3);
@@ -85,6 +87,7 @@ describe("About Arrays", function() {
         expect(array).to.eql([1, 2]);
     });
 
+    // https://developer.mozilla.org/en/JavaScript/Reference/Global_Objects/Array/shift
     it("should know about shifting arrays", function() {
         var array = [1, 2];
 

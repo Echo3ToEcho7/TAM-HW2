@@ -1,4 +1,10 @@
-var testFiles = ["1_equality.js", "2_functions.js", "3_arrays.js"];
+var testFiles = [
+    "1_equality.js",
+    "2_functions.js",
+    "3_arrays.js",
+    "4_objects.js",
+    "5_inheritance.js"
+];
 
 var express = require("express");
 var app = express.createServer();
