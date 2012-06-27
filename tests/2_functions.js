@@ -71,7 +71,6 @@ describe("About Functions", function() {
             return arg1;
         };
 
-        expect(oneArgFn("Hello", "World")).to.not.throwException();
         expect(oneArgFn("Hello", "World")).to.equal("Hello");
     });
 
@@ -80,7 +79,6 @@ describe("About Functions", function() {
             return arguments[arguments.length - 1];
         };
 
-        expect(oneArgFn("Hello", "World")).to.not.throwException();
         expect(oneArgFn("Hello", "World")).to.equal("World");
 
     });
