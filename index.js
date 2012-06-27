@@ -1,13 +1,44 @@
-var Mocha = require("mocha");
-Mocha.reporters.Base.useColors = false;
+var testFiles = [];
 
-var m = new Mocha();
+testFiles.push("1_equality.js");
+testFiles.push("2_functions.js");
 
-m.reporter("spec");
+var express = require("express");
+var app = express.createServer();
 
-m.addFile("1_equality.js");
-m.addFile("2_functions.js");
+var port = process.env.PORT || 3000;
+var ipaddr = process.env.IP || "localhost";
 
-m.run(function onDone() {
-    console.log("Done");
+app.configure(function() {
+   app.use(app.router);
+   app.use(express["static"](__dirname + "/tests"));
+   app.use(express["static"](__dirname + "/node_modules/mocha"));
+   app.use(express["static"](__dirname + "/node_modules/expect.js"));
 });
+
+app.get("/", function(req, res) {
+    var i, ii;
+    var html = 
+    "<html>" +
+    "   <head>" +
+    "       <link href='mocha.css' rel='stylesheet'></link>" +
+    "       <script src='expect.js'></script>" +
+    "       <script src='mocha.js'></script>" +
+    "       <script>mocha.setup('bdd')</script>";
+    
+    for (i = 0, ii = testFiles.length; i < ii; i++) {
+        html = html + "<script src='" + testFiles[i] + "'></script>";
+    }
+    
+    html = html +
+    "   </head>" +
+    "   <body>" +
+    "       <div id='mocha'></div>" +
+    "       <script type='text/javascript'>mocha.run()</script>" +
+    "   </body>" +
+    "</html>";
+    
+    res.end(html);
+});
+
+app.listen(port, ipaddr);
