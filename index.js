@@ -1,5 +1,6 @@
 var testFiles = [
-    "1_equality.js",
+	"0_expects.js",
+	"1_equality.js",
     "2_functions.js",
     "3_arrays.js",
     "4_objects.js",
