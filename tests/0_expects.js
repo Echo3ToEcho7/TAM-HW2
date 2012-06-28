@@ -27,22 +27,4 @@ describe("About Expects.js", function() {
 		expect({}).to.be.an(Object);
 	});
 
-	it("should use 'length' to assert array lengths", function() {
-		expect([]).to.have.length(0);
-		expect([1, 2, 3]).to.have.length(3);
-	});
-
-	it("should use 'throwError/throwException' to assert if a function throws exception", function() {
-		var fn1 = function() {
-			throw new Error;
-		};
-
-		var fn2 = function() {};
-
-		expect(fn1).to.throwException(function(e) {
-			expect(e).to.be.an(Error); // We can also check the type of Exception
-		});
-
-		expect(fn2).not.to.throwException();
-	});
 });
