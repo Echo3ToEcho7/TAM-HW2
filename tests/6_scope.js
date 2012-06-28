@@ -7,6 +7,10 @@ describe("About Scope", function() {
 		this.a = val;
 	};
 
+	SomePrototype.prototype.callMe = function callMe(fn) {
+		fn.call(this);
+	};
+
 	var o1, o2;
 
 	beforeEach(function() {
@@ -26,6 +30,12 @@ describe("About Scope", function() {
 
 		expect(o1.a).to.equal(1);
 		expect(o2.a).to.equal(2);
+
+		o1.callMe(function () {
+			this.a = 5;
+		});
+
+		expect(o1.a).to.equal(5);
 	});
 
 });
