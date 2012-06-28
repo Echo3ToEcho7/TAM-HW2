@@ -11,8 +11,8 @@
                     return a + b;
                 }
     
-                expect(someFunction).to.be.a(Function);
-                expect(someFunction(1, 1)).to.equal(2);
+                expect(someFunction).to.be.a(FILL_ME_IN);
+                expect(someFunction(1, 1)).to.equal(FILL_ME_IN);
             });
     
             it("should allow anonymous function declarations", function () {
@@ -20,8 +20,8 @@
                     return a + b;
                 };
     
-                expect(someFunction).to.be.a(Function);
-                expect(someFunction(1, 1)).to.equal(2);
+                expect(someFunction).to.be.a(FILL_ME_IN);
+                expect(someFunction(1, 1)).to.equal(FILL_ME_IN);
             });
     
             it("should allow function variables to be different from the name", function () {
@@ -29,8 +29,8 @@
                     return a + b;
                 };
     
-                expect(myFunction).to.be.a(Function);
-                expect(myFunction(1, 1)).to.equal(2);
+                expect(myFunction).to.be.a(FILL_ME_IN);
+                expect(myFunction(1, 1)).to.equal(FILL_ME_IN);
             });
     
             it("should contain the real name of the function when converted to a string", function () {
@@ -38,7 +38,7 @@
                     return a + b;
                 };
     
-                expect(myFunction.toString()).to.contain("someFunction");
+                expect(myFunction.toString()).to.contain(FILL_ME_IN);
             });
         });
     
@@ -52,7 +52,7 @@
     
                 outer = 6;
     
-                expect(someFunction()).to.equal(6);
+                expect(someFunction()).to.equal(FILL_ME_IN);
             });
     
             it("should not allow other functions to see inside", function () {
@@ -67,7 +67,7 @@
                 };
     
                 expect(exceptionFn).to.throwException(function (e) {
-                    expect(e).to.be.a(ReferenceError);
+                    expect(e).to.be.a(FILL_ME_IN);
                 });
             });
         });
@@ -77,7 +77,7 @@
                 return arg1;
             };
     
-            expect(oneArgFn("Hello", "World")).to.equal("Hello");
+            expect(oneArgFn("Hello", "World")).to.equal(FILL_ME_IN);
         });
     
         it("should have access to the 'arguments' variable to access undefined arguments", function () {
@@ -85,7 +85,7 @@
                 return arguments[arguments.length - 1];
             };
     
-            expect(oneArgFn("Hello", "World")).to.equal("World");
+            expect(oneArgFn("Hello", "World")).to.equal(FILL_ME_IN);
     
         });
     });

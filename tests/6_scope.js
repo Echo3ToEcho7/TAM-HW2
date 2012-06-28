@@ -27,21 +27,21 @@
         it("should know it's default scope", function () {
             o1.changeA(2);
     
-            expect(o1.a).to.equal(2);
-            expect(o2.a).to.equal(1);
+            expect(o1.a).to.equal(FILL_ME_IN);
+            expect(o2.a).to.equal(FILL_ME_IN);
         });
     
         it("should obay function.call to manually set the scope", function () {
             o1.changeA.call(o2, 2);
     
-            expect(o1.a).to.equal(1);
-            expect(o2.a).to.equal(2);
+            expect(o1.a).to.equal(FILL_ME_IN);
+            expect(o2.a).to.equal(FILL_ME_IN);
     
             o1.callMe(function () {
                 this.a = 5;
             });
     
-            expect(o1.a).to.equal(5);
+            expect(o1.a).to.equal(FILL_ME_IN);
         });
     
     });

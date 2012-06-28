@@ -36,20 +36,20 @@
         });
     
         it("should be able to call a method on the derived object", function () {
-            expect(swedishChef.cook()).to.equal("Mmmm soup!");
+            expect(swedishChef.cook()).to.equal(FILL_ME_IN);
         });
     
         it("should be able to call a method on the base object", function () {
-            expect(swedishChef.answerNanny()).to.equal("Everything's cool!");
+            expect(swedishChef.answerNanny()).to.equal(FILL_ME_IN);
         });
     
         it("should set constructor parameters on the base object", function () {
-            expect(swedishChef.age).to.equal(2);
-            expect(swedishChef.hobby).to.equal("cooking");
+            expect(swedishChef.age).to.equal(FILL_ME_IN);
+            expect(swedishChef.hobby).to.equal(FILL_ME_IN);
         });
     
         it("should set constructor parameters on the derived object", function () {
-            expect(swedishChef.mood).to.equal("chillin");
+            expect(swedishChef.mood).to.equal(FILL_ME_IN);
         });
     });
 }());
