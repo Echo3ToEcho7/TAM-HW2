@@ -1,3 +1,5 @@
+// More information on Expect.js at https://github.com/LearnBoost/expect.js
+
 describe("About Expects.js", function() {
 	it("should use 'ok' to assert that the value is truthy or not", function() {
 		expect(1).to.be.ok();
