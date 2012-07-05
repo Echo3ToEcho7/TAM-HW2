@@ -6,10 +6,10 @@
         "0_expects.js",
         "1_equality.js",
         "2_functions.js",
-        "3_arrays.js",
-        "4_objects.js",
-        "5_inheritance.js",
-        "6_scope.js"
+        "3_arrays.js"
+//        "4_objects.js",
+//        "5_inheritance.js",
+//        "6_scope.js"
     ];
 
     var express = require("express");
